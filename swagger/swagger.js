@@ -5,7 +5,7 @@ const doc = {
         title: 'Book Tracker API',
         description: 'API for managing a personal reading list'
     },
-    host: 'localhost:8080/api',
+    host: process.env.HOST,
     Schemas: ['http']
 }
 
