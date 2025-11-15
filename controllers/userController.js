@@ -47,7 +47,11 @@ async function createUser(req, res) {
 //PUT
 async function updateUser(req, res) {
     try {
-        const updated = await userModel.findOneAndUpdate(req.params.id, req.body, { new: true })
+            const updated = await userModel.findByIdAndUpdate(
+            req.params.id,
+            { $set: req.body },
+            { new: true, runValidators: true }
+        );
         if(!updated) {
             res.status(400).json({ message: 'User not found' })
         }
