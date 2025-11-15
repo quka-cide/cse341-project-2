@@ -23,9 +23,11 @@ async function connectDB() {
   }
 }
 
+const port = process.env.PORT || 8080
+
 connectDB().then(() => {
   app.use('/api', routes);
-  app.listen(process.env.PORT, () =>
-    console.log(`Server running on http://localhost:${process.env.PORT}`)
+  app.listen(port, () =>
+    console.log(`Server running on ${port}`)
   );
 });

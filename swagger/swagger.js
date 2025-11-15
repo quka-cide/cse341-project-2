@@ -6,7 +6,7 @@ const doc = {
         description: 'API for managing a personal reading list'
     },
     host: process.env.HOST,
-    Schemas: ['http']
+    Schemas: ['http', 'https']
 }
 
 const outputFile = './swagger.json'
